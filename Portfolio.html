@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Developer Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* height: 100vh; */
+    }
+
+    /* Resume Container */
+    .resume-container {
+      background: #1e1e1e;
+      padding: 25px;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      text-align: center;
+    }
+
+    /* Profile Picture */
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #f39c12;
+      margin-bottom: 10px;
+    }
+
+    /* Headings */
+    h1 {
+      font-size: 24px;
+      margin: 5px 0;
+    }
+
+    h2 {
+      font-size: 18px;
+      color: #f39c12;
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin-top: 15px;
+      border-bottom: 2px solid #f39c12;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* Sections */
+    .about,
+    .skills,
+    .experience,
+    .education,
+    .contact {
+      text-align: left;
+      margin-top: 10px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 5px 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    /* Skill Bars */
+    .skill-bar {
+      margin: 10px 0;
+    }
+
+    .progress {
+      background: #333;
+      height: 8px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0;
+      background: #f39c12;
+      transition: width 1s ease-in-out;
+    }
+
+    /* Download Button */
+    .download-btn {
+      background: #f39c12;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      color: #121212;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .download-btn:hover {
+      background: #e67e22;
+    }
+
+    a {
+      display: inline-block;
+      font-size: 14px;
+      color: #f39c12;
+      text-decoration: none;
+      margin-top: 10px;
+      font-weight: 600;
+      transition: color 0.3s ease-in-out;
+    }
+
+    a:hover {
+      color: #e67e22;
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .resume-container {
+        width: 90%;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="resume-container">
+    <header>
+      <img src="pro.jpg" alt="Profile Picture" class="profile-pic">
+      <h1>Jagrup Meghwal</h1>
+      <h2>Web Developer</h2>
+      <p>Jaipur, India | jagruptalniya@gmail.com | +91 7850984303</p>
+    </header>
+
+    <section class="about">
+      <h3>About Me</h3>
+      <p>Passionate web developer with expertise in modern web technologies, dedicated to building responsive and
+        interactive websites.</p>
+    </section>
+
+    <section class="skills">
+      <h3>Skills</h3>
+      <div class="skill-bar">
+        <p>HTML & CSS</p>
+        <div class="progress">
+          <div class="progress-bar html"></div>
+        </div>
+      </div>
+      <div class="skill-bar">
+        <p>JavaScript & React.js</p>
+        <div class="progress">
+          <div class="progress-bar js"></div>
+        </div>
+      </div>
+      <div class="skill-bar">
+        <p>PHP & MySQL</p>
+        <div class="progress">
+          <div class="progress-bar php"></div>
+        </div>
+      </div>
+      <div class="skill-bar">
+        <p>Python & Django</p>
+        <div class="progress">
+          <div class="progress-bar python"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience">
+      <h3>Experience</h3>
+      <h4>Freelance Web Developer</h4>
+      <p>2025 - Present</p>
+      <p>Developed multiple responsive websites for clients across different industries.</p>
+    </section>
+
+    <section class="education">
+      <h3>Education</h3>
+      <p>Bachelor's Degree in Computer Science</p>
+    </section>
+    <a href="https://www.instagram.com/imjagruptalniya/">Instagram</a><br>
+    <button class="download-btn">Download Resume</button>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Animate skill bars
+      document.querySelector(".html").style.width = "95%";
+      document.querySelector(".js").style.width = "85%";
+      document.querySelector(".php").style.width = "80%";
+      document.querySelector(".python").style.width = "75%";
+
+      // Download resume function
+      document.querySelector(".download-btn").addEventListener("click", function () {
+        alert("Resume download feature coming soon!");
+      });
+    });
+  </script>
+</body>
+
+</html>
