@@ -2,225 +2,159 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Developer Resume</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    /* General Styles */
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-      margin: 0;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      /* height: 100vh; */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jagu - Portfolio</title>
 
-    /* Resume Container */
-    .resume-container {
-      background: #1e1e1e;
-      padding: 25px;
-      max-width: 600px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-      text-align: center;
-    }
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    /* Profile Picture */
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #f39c12;
-      margin-bottom: 10px;
-    }
-
-    /* Headings */
-    h1 {
-      font-size: 24px;
-      margin: 5px 0;
-    }
-
-    h2 {
-      font-size: 18px;
-      color: #f39c12;
-      margin: 0;
-    }
-
-    h3 {
-      font-size: 16px;
-      margin-top: 15px;
-      border-bottom: 2px solid #f39c12;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    /* Sections */
-    .about,
-    .skills,
-    .experience,
-    .education,
-    .contact {
-      text-align: left;
-      margin-top: 10px;
-    }
-
-    p {
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    ul li {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 5px 10px;
-      margin: 5px 0;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-
-    /* Skill Bars */
-    .skill-bar {
-      margin: 10px 0;
-    }
-
-    .progress {
-      background: #333;
-      height: 8px;
-      border-radius: 5px;
-      overflow: hidden;
-    }
-
-    .progress-bar {
-      height: 100%;
-      width: 0;
-      background: #f39c12;
-      transition: width 1s ease-in-out;
-    }
-
-    /* Download Button */
-    .download-btn {
-      background: #f39c12;
-      border: none;
-      padding: 10px 15px;
-      font-size: 16px;
-      color: #121212;
-      border-radius: 5px;
-      margin-top: 20px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .download-btn:hover {
-      background: #e67e22;
-    }
-
-    a {
-      display: inline-block;
-      font-size: 14px;
-      color: #f39c12;
-      text-decoration: none;
-      margin-top: 10px;
-      font-weight: 600;
-      transition: color 0.3s ease-in-out;
-    }
-
-    a:hover {
-      color: #e67e22;
-      text-decoration: underline;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .resume-container {
-        width: 90%;
-        padding: 20px;
-      }
-    }
-  </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="resume-container">
-    <header>
-      <img src="pro.jpg" alt="Profile Picture" class="profile-pic">
-      <h1>Jagrup Meghwal</h1>
-      <h2>Web Developer</h2>
-      <p>Jaipur, India | jagruptalniya@gmail.com | +91 7850984303</p>
-    </header>
 
-    <section class="about">
-      <h3>About Me</h3>
-      <p>Passionate web developer with expertise in modern web technologies, dedicated to building responsive and
-        interactive websites.</p>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Jagu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skill">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#footer">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero text-center" id="home">
+        <div class="container">
+            <h1 class="fade-in">Hi, I'm <span class="typing-text">Jagrup Talniya</span></h1>
+            <p class="fade-in">A passionate <span class="highlight">Web Developer</span> crafting interactive web experiences.</p>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn hero-btn">View Portfolio</a>
+                <a href="WebDev.html" class="btn hero-btn">View My Resume</a>
+                <a href="#contact" class="btn hero-btn contact-btn">Get in Touch</a>
+            </div>
+        </div>
     </section>
 
-    <section class="skills">
-      <h3>Skills</h3>
-      <div class="skill-bar">
-        <p>HTML & CSS</p>
-        <div class="progress">
-          <div class="progress-bar html"></div>
+    <!-- About Section -->
+    <section id="about" class="py-5 mt-5">
+        <div class="container text-center">
+            <h2>About Me</h2>
+            <p>Some brief info about me.</p>
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <img src="pro.jpg" class="img-fluid rounded-circle" alt="Profile">
+                </div>
+                <div class="col-md-8 text-start">
+                    <h3>Web Developer</h3>
+                    <p>
+                        I am a passionate Web Developer with expertise in HTML, CSS, JavaScript, MySQL, Python, and Django.
+                        I enjoy building responsive and interactive websites that provide a seamless user experience.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li><strong>Birthday:</strong> 20 Jan 2005</li>
+                        <li><strong>Contact:</strong> 7850984303</li>
+                        <li><strong>Email:</strong> jagruptalniya@gmail.com</li>
+                        <li><strong>Location:</strong> Jaipur, Rajasthan</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="skill-bar">
-        <p>JavaScript & React.js</p>
-        <div class="progress">
-          <div class="progress-bar js"></div>
+    </section>
+    <div id="skill">
+    <!-- Skills Section -->
+    <section class="mt-4 text-start">
+        <div class="container">
+            <h3 class="section-title">Skills</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>HTML & CSS</p>
+                    <div class="progress"><div class="progress-bar" style="width: 90%"></div></div>
+                    <p>JavaScript</p>
+                    <div class="progress"><div class="progress-bar" style="width: 75%"></div></div>
+                </div>
+                <div class="col-md-6">
+                    <p>PHP & MySQL</p>
+                    <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
+                    <p>Python & Django</p>
+                    <div class="progress"><div class="progress-bar" style="width: 80%"></div></div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="skill-bar">
-        <p>PHP & MySQL</p>
-        <div class="progress">
-          <div class="progress-bar php"></div>
-        </div>
-      </div>
-      <div class="skill-bar">
-        <p>Python & Django</p>
-        <div class="progress">
-          <div class="progress-bar python"></div>
-        </div>
-      </div>
     </section>
 
-    <section class="experience">
-      <h3>Experience</h3>
-      <h4>Web Developer</h4>
-      <p>2025 - Present</p>
-      <p>Developed multiple responsive websites.</p>
+    <!-- Projects Section -->
+    <section class="mt-4 text-start">
+        <div class="container">
+            <h3 class="section-title">Projects</h3>
+            <ul>
+                <li><strong>Recipe Website (Django & MySQL):</strong> Recipe-sharing platform with authentication and rating system.</li>
+                <li><strong>Portfolio Website:</strong> Personal portfolio showcasing my skills and projects.</li>
+                <li><strong>Django E-commerce Website:</strong> Functional e-commerce platform with authentication, cart, and payment integration.</li>
+            </ul>
+        </div>
     </section>
 
-    <section class="education">
-      <h3>Education</h3>
-      <p>Bachelor's Degree in Computer Science</p>
+    <!-- Experience Section -->
+    <section class="mt-4 text-start">
+        <div class="container">
+            <h3 class="section-title">Experience</h3>
+            <h5>Freelance Web Developer</h5>
+            <p>2025 - Present</p>
+            <p>Developed responsive and interactive websites for multiple clients, ensuring high performance and SEO optimization.</p>
+        </div>
     </section>
-    <a href="https://www.instagram.com/imjagruptalniya/">Instagram</a><br>
-    <button class="download-btn">Download Resume</button>
-  </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Animate skill bars
-      document.querySelector(".html").style.width = "95%";
-      document.querySelector(".js").style.width = "85%";
-      document.querySelector(".php").style.width = "80%";
-      document.querySelector(".python").style.width = "75%";
+    <!-- Education Section -->
+    <section class="mt-4 text-start">
+        <div class="container">
+            <h3 class="section-title">Education</h3>
+            <p>Bachelor's Degree - MDSU Ajmer</p>
+        </div>
+    </section>
+    </div>
 
-      // Download resume function
-      document.querySelector(".download-btn").addEventListener("click", function () {
-        alert("Resume download feature coming soon!");
-      });
-    });
-  </script>
+    <div class="section text-center">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:jagruptalniya@gmail.com">jagruptalniya@gmail.com</a></p>
+        <p>Phone: <a href="tel:+917850984303">+91 7850984303</a></p>
+    </div>
+
+    <!-- Footer -->
+     
+    <footer class="footer text-center mt-5 py-3 bg-light" id="footer">
+        <p style="color: black;">&copy; Copyright <strong>Jagu</strong> All Rights Reserved</p>
+        <div class="social-icons">
+            <a href="https://x.com/Imjagruptalniya" style="color: black;"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/jagrup.meghwal" style="color: black;"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/imjagruptalniya/" style="color: black;"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/jagrup-talniya-9a9374334?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" style="color: black;"><i class="fab fa-linkedin"></i></a>
+            
+        </div>
+        <p style="color: black;">Designed by <a href="#">Jagrup Talniya</a></p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
-
 </html>
