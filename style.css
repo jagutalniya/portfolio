@@ -1,0 +1,216 @@
+/* General Styles */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 12px 0;
+    transition: background 0.3s ease-in-out;
+}
+
+.navbar-brand {
+    font-size: 26px;
+    font-weight: 700;
+    color: #007bff;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    color: #0056b3;
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: 700;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Typing Effect */
+.typing-text {
+    display: inline-block;
+    border-right: 3px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(20) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Hero Buttons */
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.hero-btn {
+    background: white;
+    color: #007bff;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 5px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #f8f9fa;
+    color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Contact Button */
+.contact-btn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.contact-btn:hover {
+    background: white;
+    color: #007bff;
+}
+
+/* About Section */
+.about {
+    background: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about-heading {
+    font-size: 38px;
+    font-weight: bold;
+    color: #007bff;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.about-heading::after {
+    content: "";
+    width: 50px;
+    height: 4px;
+    background: #007bff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about-text {
+    font-size: 20px;
+    color: #555;
+    max-width: 700px;
+    margin: 20px auto;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+.about-text span {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Profile Image */
+.profile-img img {
+    width: 180px;
+    height: 230px;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-img img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.scroll-to-top:hover {
+    background: #0056b3;
+    transform: scale(1.1);
+}
