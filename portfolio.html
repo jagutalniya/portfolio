@@ -2,1053 +2,519 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jagrup Meghwal — Web Developer | Portfolio</title>
+    <meta name="description"
+        content="Jagrup Meghwal - Web Developer. Django, PHP, Angular, CodeIgniter, MySQL, Frontend & Backend." />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+        :root {
+            --primary: #2d6cdf;
+            --accent: #6ec1ff;
+            --muted: #6b7280;
+            --bg: #fbfdff;
+            --card: #ffffff;
+            --glass: rgba(255, 255, 255, 0.6);
+            --radius: 18px;
+            --max-width: 1100px;
+        }
 
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-decoration: none;
-            border: none;
-            outline: none;
-            scroll-behavior: smooth;
-            font-family: 'Nunito', sans-serif;
-        }
-
-        :root {
-            --bg-color: #191f36;
-            --second-bg-color: #1f242d;
-            --text-color: #fff;
-            --main-color: #0ef;
-        }
-
-        html {
-            font-size: 62.5%;
-            /* 1rem = 10px */
-            overflow-x: hidden;
+            box-sizing: border-box
         }
 
         body {
-            background: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
+            color: #111827;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.45;
         }
 
-        section {
-            min-height: 100vh;
-            padding: 10rem 9% 2rem;
+        .wrap {
+            max-width: var(--max-width);
+            margin: 48px auto;
+            padding: 34px;
+            border-radius: 22px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(245, 249, 255, 0.6));
+            box-shadow: 0 12px 30px rgba(37, 70, 140, 0.06), 0 3px 8px rgba(17, 24, 39, 0.04);
+            border: 1px solid rgba(45, 108, 223, 0.06);
         }
 
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 2rem 9%;
-            background: var(--bg-color);
+        .top-header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            z-index: 100;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .brand {
+            display: flex;
+            gap: 14px;
+            align-items: center
         }
 
         .logo {
-            font-size: 2.5rem;
-            color: var(--text-color);
-            font-weight: 700;
-            cursor: pointer;
-            text-transform: uppercase;
-        }
-
-        .navbar a {
-            font-size: 1.5rem;
-            color: var(--text-color);
-            font-weight: 700;
-            margin-left: 4rem;
-            transition: color 0.3s;
-        }
-
-        .navbar a:hover,
-        .navbar a.active {
-            color: var(--main-color);
-        }
-
-        #menu-icon {
-            font-size: 3.6rem;
-            color: var(--text-color);
-            display: none;
-        }
-
-        .home {
+            width: 82px;
+            height: 82px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             display: flex;
             align-items: center;
             justify-content: center;
-            /* background: url("images/j2.jpg") no-repeat; */
-            border-radius: 20px;
-            background-size: cover;
-            background-position: center;
+            color: white;
+            font-weight: 800;
+            font-size: 22px;
+            box-shadow: 0 6px 20px rgba(45, 108, 223, 0.12);
         }
 
-        .home-content h3 {
-            font-size: 3.2rem;
-            font-weight: 700;
+        .brand h1 {
+            margin: 0;
+            font-size: 24px;
+            letter-spacing: 2px
         }
 
-        .home-content h3:nth-of-type(2) {
-            margin-bottom: 2rem;
+        .brand p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px
         }
 
-        span {
-            color: var(--main-color);
-        }
-
-        .home-content h1 {
-            font-size: 5.6rem;
-            font-weight: 700;
-            line-height: 1.3;
-        }
-
-        .home-img img {
-            width: 25vw;
-            animation: floatImage 4s ease-in-out infinite;
-        }
-
-        @keyframes floatImage {
-            0% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-2.4rem);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        .home-content p {
-            font-size: 2.8rem;
-        }
-
-        .social-media a {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 4rem;
-            height: 4rem;
-            background: transparent;
-            border: 0.2rem solid var(--main-color);
-            border-radius: 50%;
-            font-size: 2rem;
-            color: var(--main-color);
-            margin: 3rem 1.5rem 3rem 0;
-            transition: background 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
-        }
-
-        .social-media a:hover {
-            background: var(--main-color);
-            color: var(--second-bg-color);
-            box-shadow: 0 0 1rem var(--main-color);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1rem 2.8rem;
-            background: var(--main-color);
-            border-radius: 4rem;
-            box-shadow: 0 0 1rem var(--main-color);
-            font-size: 1.6rem;
-            color: var(--second-bg-color);
-            letter-spacing: 0.1rem;
-            font-weight: 600;
-            transition: box-shadow 0.5s ease;
-        }
-
-        .btn:hover {
-            box-shadow: none;
-        }
-
-        .about {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            background: var(--second-bg-color);
-        }
-
-        .about-img img {
-            width: 35vw;
-        }
-
-        .heading {
-            text-align: center;
-            font-size: 4.5rem;
-        }
-
-        .about-content h2 {
-            text-align: left;
-            font-size: 1.2rem;
-        }
-
-        .about-content h3 {
-            font-size: 2.6rem;
-        }
-
-        .about-content p {
-            font-size: 1.6rem;
-            margin: 2rem 0 3rem;
-        }
-
-        .services h2 {
-            margin-bottom: 5rem;
-        }
-
-        .services-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .services-container .services-box {
-            flex: 1 1 30rem;
-            background: var(--second-bg-color);
-            padding: 3rem 2rem 4rem;
-            border-radius: 2rem;
-            text-align: center;
-            border: 0.2rem solid var(--bg-color);
-            transition: border-color 0.5s ease, transform 0.5s ease;
-        }
-
-        .services-container .services-box:hover {
-            border-color: var(--main-color);
-            transform: scale(1.02);
-        }
-
-        .services-box i {
-            font-size: 2rem;
-            color: var(--main-color);
-        }
-
-        .services-box h3 {
-            font-size: 2.6rem;
-        }
-
-        .services-box p {
-            font-size: 1.6rem;
-            margin: 1rem 0 3rem;
-        }
-
-        .portfolio {
-            background: var(--second-bg-color);
-        }
-
-        .portfolio h2 {
-            margin-bottom: 4rem;
-        }
-
-        .portfolio-container {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 340px 1fr;
+            gap: 28px
+        }
+
+        .left-card {
+            background: var(--card);
+            padding: 22px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(13, 38, 79, 0.04);
+            border: 1px solid rgba(17, 24, 39, 0.03);
+        }
+
+        .photo {
+            width: 100%;
+            height: 180px;
+            border-radius: 10px;
+            object-fit: cover;
+            background: linear-gradient(180deg, var(--accent), var(--primary));
+            display: flex;
             align-items: center;
-            gap: 2.5rem;
-        }
-
-        .portfolio-container .portfolio-box {
-            position: relative;
-            border-radius: 2rem;
-            box-shadow: 0 0 1rem var(--bg-color);
-            overflow: hidden;
-            display: flex;
-        }
-
-        .portfolio-box img {
-            width: 100%;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            opacity: 0.7;
-        }
-
-        .portfolio-box:hover img {
-            transform: scale(1.1);
-            opacity: 1;
-        }
-
-        .portfolio-box .portfolio-layer {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.1), var(--main-color));
-            display: flex;
             justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            padding: 0 4rem;
-            transform: translateY(100%);
-            transition: transform 0.5s ease;
+            color: white;
+            font-weight: 700;
+            font-size: 20px
         }
 
-        .portfolio-box:hover .portfolio-layer {
-            transform: translateY(0);
+        .contact-list {
+            margin-top: 14px
         }
 
-        .portfolio-layer h4 {
-            font-size: 3rem;
+        .contact-list li {
+            list-style: none;
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(15, 23, 42, 0.04);
+            display: flex;
+            gap: 10px;
+            align-items: center
         }
 
-        .portfolio-layer p {
-            font-size: 1.6rem;
-            margin: 0.3rem 0 1rem;
-        }
-
-        .portfolio-layer a {
+        .chip {
             display: inline-flex;
-            justify-content: center;
             align-items: center;
-            width: 5rem;
-            height: 5rem;
-            background: var(--text-color);
-            border-radius: 50%;
+            gap: 8px;
+            padding: 6px 10px;
+            background: rgba(45, 108, 223, 0.06);
+            border-radius: 999px;
+            color: var(--primary);
+            font-weight: 600
         }
 
-        .portfolio-layer a i {
-            font-size: 2rem;
-            color: var(--second-bg-color);
+        .section-title {
+            font-size: 13px;
+            color: var(--primary);
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-top: 18px
         }
 
-        .contact h2 {
-            margin-bottom: 3rem;
-        }
-
-        .contact form {
-            max-width: 70rem;
-            margin: 1rem auto;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .contact form .input-box {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .contact form .input-box input,
-        .contact form textarea {
-            width: 100%;
-            padding: 1.5rem;
-            font-size: 1.6rem;
-            color: var(--text-color);
-            background: var(--second-bg-color);
-            border-radius: 0.8rem;
-            margin: 0.7rem 0;
-        }
-
-        .contact form .input-box input {
-            width: 49%;
-        }
-
-        .contact form textarea {
-            resize: none;
-        }
-
-        .contact form .btn {
-            margin-top: 2rem;
-            cursor: pointer;
-        }
-
-        .footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            padding: 2rem 9%;
-            background: var(--second-bg-color);
-            color: var(--text-color);
-        }
-
-        .footer-text {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .footer-iconTop a {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0.8rem;
-            background: var(--main-color);
-            border-radius: 0.8rem;
-            transition: 0.5s ease;
-        }
-
-        .footer-iconTop a:hover {
-            box-shadow: 0 0 1rem var(--main-color);
-        }
-
-        .footer-iconTop a i {
-            font-size: 2.4rem;
-            color: var(--second-bg-color);
-        }
-
-        /* Breakpoint */
-
-        @media (max-width: 1200px) {
-            html {
-                font-size: 55%;
-            }
-        }
-
-        @media (max-width: 991px) {
-            .header {
-                padding: 2rem 3%;
-            }
-
-            section {
-                padding: 10rem 3% 2rem;
-            }
-
-            .services {
-                padding-bottom: 7rem;
-            }
-
-            .portfolio {
-                padding-bottom: 7rem;
-            }
-
-            .contact {
-                min-height: auto;
-            }
-
-            .footer {
-                padding: 2rem 3%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            #menu-icon {
-                display: block;
-            }
-
-            .navbar {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                padding: 1rem 3%;
-                background: var(--bg-color);
-                border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
-                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-                display: none;
-            }
-
-            .navbar.active {
-                display: block;
-            }
-
-            .navbar a {
-                display: block;
-                font-size: 2rem;
-                margin: 3rem 0;
-            }
-
-            .home {
-                flex-direction: column;
-            }
-
-            .home-content h3 {
-                font-size: 2.6rem;
-            }
-
-            .home-content h1 {
-                font-size: 5rem;
-            }
-
-            .home-content {
-                order: 2;
-            }
-
-            .home-img img {
-                width: 70vw;
-                margin-top: 4rem;
-            }
-
-            .about {
-                flex-direction: column;
-            }
-
-            .about-img img {
-                width: 90vw;
-                margin-top: 4rem;
-            }
-
-            .services h2 {
-                margin-bottom: 3rem;
-            }
-
-            .portfolio h2 {
-                margin-bottom: 3rem;
-            }
-
-            .portfolio-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 617px) {
-            .portfolio-container {
-                grid-template-columns: 1fr;
-            }
-
-            .home-img img {
-                width: 80vw;
-                margin-top: 8rem;
-            }
-
-            .about-img img {
-                width: 100vw;
-                margin-top: 4rem;
-            }
-        }
-
-        @media (max-width: 450px) {
-            html {
-                font-size: 50%;
-            }
-
-            .contact form .input-box input {
-                width: 100%;
-            }
-
-        }
-
-        section {
-            min-height: auto;
-            padding: 6rem 9% 2rem;
-            background: var(--second-bg-color);
-            border-radius: 1rem;
-            margin-top: 2rem;
-        }
-
-        .heading {
-            text-align: center;
-            font-size: 4.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .heading span {
-            color: var(--main-color);
-        }
-
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        .skill-category {
-            background: var(--bg-color);
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-category h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--main-color);
-            text-align: center;
+        .muted {
+            color: var(--muted);
+            font-size: 14px
         }
 
         .skill-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-info {
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            margin-bottom: 0.5rem;
+            margin: 8px 0
         }
 
-        .skill-name {
-            font-size: 1.6rem;
-            font-weight: 600;
-        }
-
-        .skill-percentage {
-            font-size: 1.4rem;
-            color: var(--main-color);
-            font-weight: 600;
-        }
-
-        .progress-bar {
-            height: 1rem;
-            background: #2d3746;
-            border-radius: 0.5rem;
+        .meter {
+            height: 10px;
+            background: #eef4ff;
+            border-radius: 99px;
             overflow: hidden;
-            position: relative;
+            width: 100%;
+            margin-left: 12px
         }
 
-        .progress {
+        .meter>span {
+            display: block;
             height: 100%;
-            background: var(--main-color);
-            border-radius: 0.5rem;
-            position: relative;
-            transition: width 1.5s ease-in-out;
-            box-shadow: 0 0 0.5rem var(--main-color);
+            background: linear-gradient(90deg, var(--primary), var(--accent))
         }
 
-        .progress::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background-image: linear-gradient(-45deg,
-                    rgba(255, 255, 255, 0.2) 25%,
-                    transparent 25%,
-                    transparent 50%,
-                    rgba(255, 255, 255, 0.2) 50%,
-                    rgba(255, 255, 255, 0.2) 75%,
-                    transparent 75%,
-                    transparent);
-            background-size: 1rem 1rem;
-            animation: move 2s linear infinite;
-            border-radius: 0.5rem;
+        .right-card {
+            padding: 18px 22px
+        }
+
+        .subtitle {
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 1px
+        }
+
+        .bullet {
+            margin-left: 18px
+        }
+
+        .projects .card {
+            border-radius: 14px;
+            border: 1px solid rgba(15, 23, 42, 0.04)
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(45, 108, 223, 0.08);
+            color: var(--primary);
+            padding: 6px 10px;
+            border-radius: 99px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        @media (max-width:980px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .top-header {
+                flex-direction: column;
+                align-items: flex-start
+            }
+
+            .logo {
+                width: 66px;
+                height: 66px;
+                font-size: 18px
+            }
+        }
+
+        .ribbon {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #fff, #f1f8ff);
+            border: 1px solid rgba(45, 108, 223, 0.06);
+            font-weight: 700;
+            color: var(--primary)
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all .6s cubic-bezier(.2, .9, .2, 1)
+        }
+
+        .fade-up.in {
+            opacity: 1;
+            transform: none
+        }
+
+        .mbs {
+            margin-bottom: 8px
         }
     </style>
-    <title>Jagrup Talniya | Portfolio</title>
 </head>
 
 <body>
-    <header class="header">
-        <a href="#" class="logo">Jagu</a>
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
 
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#portfolio">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <div class="wrap">
 
-    <section class="home" id="home">
-        <div class="home-content">
-            <h3>Hi There 👋, I'm</h3>
-            <h1>Jagrup Talniya</h1>
-            <h3>A Passionate <span class="multiple-text">Web Developer</span></h3>
-            <p>
-                I'm a dedicated and creative <strong>Full-Stack Web Developer</strong> skilled in building modern,
-                secure, and scalable web applications. I specialize in front-end and back-end development using
-                technologies like <strong>HTML5, CSS3, Bootstrap, JavaScript, jQuery, Ajax, PHP, Python, MySQL, Angular,
-                    React,
-                    CodeIgniter 3, Laravel and Django</strong>. I love solving real-world problems through clean and
-                efficient code.
-            </p>
-
-            <div class="social-media">
-                <a href="https://x.com/Imjagruptalniya" target="_blank"><i class="fab fa-x-twitter"></i></a>
-                <a href="https://www.facebook.com/jagrup.meghwal" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/imjagruptalniya/" target="_blank"><i
-                        class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/jagrup-talniya-9a9374334" target="_blank"><i
-                        class="fab fa-linkedin"></i></a>
-            </div>
-
-            <a href="#contact" class="btn">Contact Me</a>
-        </div>
-
-        <div class="home-img" height="50px">
-            <img src="images/j.jpg" alt="Jagrup Talniya" style="border-radius: 30px;">
-        </div>
-    </section>
-
-
-    <section class="about" id="about">
-        <div class="about-img">
-            <img style="border-radius: 40px; width: 300px;" src="images/h.jpg" alt="Jagrup Talniya">
-        </div>
-
-        <div class="about-content">
-            <h1 class="heading">About <span>Me</span></h1>
-            <h3>Web Developer (jagrup@dil.in)</h3>
-            <p>
-                I'm <strong>Jagrup Talniya</strong>, a passionate and detail-oriented <strong>Web Developer</strong>
-                currently working at <strong>Data Ingenious Global Limited</strong>, Jaipur.
-                I love turning ideas into fully functional, user-friendly, and visually appealing web applications.
-            </p>
-
-            <p>
-                With hands-on experience in both frontend and backend technologies such as
-                <strong>HTML5, CSS3, Bootstrap, JavaScript, jQuery, PHP, Python, MySQL, Angular, CodeIgniter 3, and
-                    Django</strong>,
-                I enjoy creating clean, efficient, and scalable code that delivers a seamless experience to users.
-            </p>
-
-            <p>
-                I’m always eager to learn new technologies and improve my skills to stay up-to-date with
-                modern web trends. My goal is to become a full-stack developer capable of designing and
-                developing complete digital solutions from scratch.
-            </p>
-
-            <p>
-                Apart from coding, I enjoy exploring new tools, contributing to real-world projects,
-                and continuously challenging myself to grow both personally and professionally And using the tools <strong>VS Code, Git, GitHub, XAMPP, DBeaver.</strong>
-            </p>
-
-            <a href="#projects" class="btn">Read More</a>
-        </div>
-    </section>
-
-    <section class="services" id="services">
-        <h2 class="heading">My <span>Services</span></h2>
-
-        <div class="services-container">
-
-            <div class="services-box">
-                <i class="fa-solid fa-code"></i>
-                <h3>Web Development</h3>
-                <p>
-                    I specialize in building responsive, secure, and user-friendly websites using
-                    <strong>HTML5, CSS3, Bootstrap, JavaScript, jQuery, and Angular</strong>.
-                    From landing pages to complex dashboards, I create clean and optimized web interfaces
-                    with a focus on performance and user experience.
-                </p>
-                <a href="#projects" class="btn">Read More</a>
-            </div>
-
-            <div class="services-box">
-                <i class="fa-solid fa-database"></i>
-                <h3>Backend Development</h3>
-                <p>
-                    I develop powerful and scalable backends using
-                    <strong>PHP (CodeIgniter 3)</strong> and <strong>Python (Django)</strong>.
-                    I ensure secure data handling, smooth API integration, and strong
-                    database management using <strong>MySQL</strong> for efficient business logic execution.
-                </p>
-                <a href="#projects" class="btn">Read More</a>
-            </div>
-
-            <div class="services-box">
-                <i class="fa-solid fa-laptop-code"></i>
-                <h3>Full-Stack Solutions</h3>
-                <p>
-                    I provide complete full-stack web solutions — from front-end design to back-end integration.
-                    Whether it’s a personal portfolio, management system, or enterprise web app, I handle the entire
-                    process to deliver smooth, functional, and modern web applications.
-                </p>
-                <a href="#contact" class="btn">Read More</a>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="skills">
-        <h2 class="heading">My <span>Skills</span></h2>
-
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3><i class="fas fa-code"></i> Frontend Development</h3>
-
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">HTML & CSS</span>
-                        <span class="skill-percentage">90%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 90%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">JavaScript</span>
-                        <span class="skill-percentage">75%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 75%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">jQuery & AJAX</span>
-                        <span class="skill-percentage">85%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 85%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Angular & React</span>
-                        <span class="skill-percentage">85%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 85%"></div>
-                    </div>
+        <div class="top-header">
+            <div class="brand">
+                <div class="logo">JM</div>
+                <div>
+                    <h1 class="mb-0">Jagrup Meghwal</h1>
+                    <p>Web Developer — Django • PHP • Angular • CodeIgniter • MySQL • Laravel </p>
                 </div>
             </div>
 
-            <div class="skill-category">
-                <h3><i class="fas fa-server"></i> Backend Development</h3>
-
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">Python & Django</span>
-                        <span class="skill-percentage">80%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 80%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">PHP & MySQL</span>
-                        <span class="skill-percentage">85%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 85%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">CodeIgniter & Laravel</span>
-                        <span class="skill-percentage">85%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 85%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-item">
-                    <div class="skill-info">
-                        <span class="skill-name">RESTful APIs</span>
-                        <span class="skill-percentage">80%</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 80%"></div>
-                    </div>
-                </div>
+            <div class="text-end">
+                <div class="ribbon">Currently @ Data Ingenious Global Limited</div>
+                <div style="font-size:12px;color:var(--muted);margin-top:6px">Open to freelance & full-time
+                    opportunities</div>
             </div>
         </div>
-    </section>
 
+        <div class="grid">
+
+            <aside class="left-card fade-up" id="leftCard">
+
+                <h4 style="margin-top:14px;margin-bottom:4px">Jagrup Meghwal</h4>
+                <div class="muted">Web Developer • Jaipur, Rajasthan</div>
+
+                <p class="mbs" style="margin-top:10px">Aspiring Web Developer building responsive sites and backend
+                    systems. Focus on security, performance and readable code.</p>
+
+                <div class="contact-list">
+                    <ul class="p-0 m-0">
+                        <li><i class="fas fa-phone text-primary"></i>
+                            <div><strong>+91 7850984303</strong>
+                                <div class="muted">Phone</div>
+                            </div>
+                        </li>
+                        <li><i class="fas fa-envelope text-primary"></i>
+                            <div><strong>jagruptalniya@gmail.com</strong>
+                                <div class="muted">Email</div>
+                            </div>
+                        </li>
+                        <li><i class="fas fa-map-marker-alt text-primary"></i>
+                            <div><strong>Jaipur, Rajasthan</strong>
+                                <div class="muted">Location</div>
+                            </div>
+                        </li>
+                        <li><i class="fab fa-github text-primary"></i>
+                            <div><strong>github.com/jagutalniya</strong>
+                                <div class="muted">GitHub</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-3">
+                    <div class="section-title">Education</div>
+                    <div style="margin-top:8px">
+                        <strong>Web Development</strong><br><small class="muted">Tech Forever Jaipur — 2024–2025</small>
+                        <br><strong>BA (Bachelor of Arts)</strong><br><small class="muted">MDSU Ajmer —
+                            2021–2024</small>
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <div class="section-title">Skills</div>
+                    <div style="margin-top:10px">
+                        <div class="skill-item">
+                            <div>HTML5 & CSS3</div>
+                            <div class="meter" style="width:52%"><span style="width:90%"></span></div>
+                        </div>
+                        <div class="skill-item">
+                            <div>JavaScript & jQuery</div>
+                            <div class="meter" style="width:52%"><span style="width:78%"></span></div>
+                        </div>
+                        <div class="skill-item">
+                            <div>Python & Django</div>
+                            <div class="meter" style="width:52%"><span style="width:82%"></span></div>
+                        </div>
+                        <div class="skill-item">
+                            <div>PHP & CodeIgniter</div>
+                            <div class="meter" style="width:52%"><span style="width:85%"></span></div>
+                        </div>
+                        <div class="skill-item">
+                            <div>Angular</div>
+                            <div class="meter" style="width:52%"><span style="width:74%"></span></div>
+                        </div>
+                        <div class="skill-item">
+                            <div>MySQL</div>
+                            <div class="meter" style="width:52%"><span style="width:86%"></span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <div class="section-title">Tools & Platforms</div>
+                    <div style="margin-top:10px">
+                        <span class="tag">VS Code</span>
+                        <span class="tag">GitHub</span>
+                        <span class="tag">XAMPP</span>
+                        <span class="tag">Bootstrap</span>
+                        <span class="tag">Postman</span>
+                    </div>
+                </div>
+
+                <section class="mt-4">
+                    <div class="section-title">Certifications & Learning</div>
+                    <ul class="muted" style="margin-top:10px">
+                        <li>Completed web development training — Tech Forever (2024–2025)</li>
+                        <li>Self-study: Modern JavaScript, Django, Laravel, React, Angular fundamentals</li>
+                    </ul>
+                </section>
+
+            </aside>
+
+            <main class="right-card fade-up" id="rightCard">
+
+                <section>
+                    <div class="section-title">Summary</div>
+                    <p class="muted" style="margin-top:10px">Aspiring Web Developer with hands-on experience in Python,
+                        Django, PHP, CodeIgniter, Angular, JavaScript, and MySQL. Passionate about building dynamic,
+                        user-friendly web applications, implementing secure authentication, and delivering responsive
+                        designs. Continuously learning and adapting to new technologies to build scalable and modern
+                        solutions.</p>
+                </section>
+
+                <section class="mt-4">
+                    <div class="section-title">Professional Experience</div>
+
+                    <div style="margin-top:12px">
+                        <h5 class="mb-0">Data Ingenious Global Limited <small class="muted">(Currently)</small></h5>
+                        <div class="muted">Backend Developer / CodeIgniter Full Stack</div>
+                        <ul class="bullet">
+                            <li>Working on building responsive, accessible frontends using Angular and Bootstrap.</li>
+                            <li>Integrating REST APIs, optimizing performance, and ensuring cross-browser compatibility.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top:12px">
+                        <h5 class="mb-0">Web Development Intern — Panoptic Infotech</h5>
+                        <div class="muted">(Internship)</div>
+                        <ul class="bullet">
+                            <li>Worked on real-time projects using Python, PHP, MySQL, Angular, and CodeIgniter 3.</li>
+                            <li>Collaborated with team members to design and implement scalable web solutions.</li>
+                            <li>Gained practical experience by building real-world projects from scratch including a
+                                Role-Based School Management System and an Invoice Management System.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="mt-4">
+                    <div class="section-title">Selected Projects</div>
+
+                    <div class="projects row mt-3 g-3">
+                        <div class="col-md-6">
+                            <div class="card p-3 h-100">
+                                <div class="d-flex align-items-start justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">Recipe Website</h5>
+                                        <small class="muted">Django • MySQL • Bootstrap</small>
+                                    </div>
+                                    <div><span class="tag">Full-Stack</span></div>
+                                </div>
+                                <p class="mt-2 muted">Developed a Django-based recipe website allowing users to browse,
+                                    search, and add recipes. Implemented user authentication, profile management, and
+                                    mobile-first responsive design.</p>
+                                <div class="mt-auto d-flex gap-2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card p-3 h-100">
+                                <div class="d-flex align-items-start justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">School Management System</h5>
+                                        <small class="muted">Angular • CodeIgniter3 • MySQL</small>
+                                    </div>
+                                    <div><span class="tag">Role-Based</span></div>
+                                </div>
+                                <p class="mt-2 muted">Built a role-based application (Admin/Teacher/Student) with CRUD,
+                                    dashboards, and responsive UI optimized for both mobile and desktop use.</p>
+                                <div class="mt-auto d-flex gap-2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card p-3 h-100">
+                                <div class="d-flex align-items-start justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">Invoice Management System</h5>
+                                        <small class="muted">PHP • MySQL • Bootstrap</small>
+                                    </div>
+                                    <div><span class="tag">Business App</span></div>
+                                </div>
+                                <p class="mt-2 muted">Implemented features for creating, editing, deleting invoices;
+                                    managing clients and payments; generating PDFs and tracking paid/unpaid status with
+                                    a responsive UI and secure authentication.</p>
+                                <div class="mt-auto d-flex gap-2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card p-3 h-100">
+                                <div class="d-flex align-items-start justify-content-between">
+                                    <div>
+                                        <h5 class="mb-1">Personal Portfolio</h5>
+                                        <small class="muted">HTML • Bootstrap • JS</small>
+                                    </div>
+                                    <div><span class="tag">UI / UX</span></div>
+                                </div>
+                                <p class="mt-2 muted">A clean, responsive portfolio website that highlights skills,
+                                    projects and contact details. Built with accessibility and SEO in mind.</p>
+                                <div class="mt-auto d-flex gap-2">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="mt-4">
+                    <div class="section-title">Volunteer / Extra</div>
+                    <p class="muted" style="margin-top:10px">Mentored junior developers, contributed to small
+                        open-source tools, and maintain a personal blog with tutorials related to web development.</p>
+                </section>
+
+            </main>
+        </div>
+        <footer>
+            <div class="mt-4"> <strong>Jagrup Meghwal</strong></div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const progressBars = document.querySelectorAll('.progress');
+        const faders = document.querySelectorAll('.fade-up');
+        const appearOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in');
+                    observer.unobserve(entry.target);
+                }
+            })
+        }, { threshold: 0.15 });
+        faders.forEach(f => appearOnScroll.observe(f));
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.width = '0%';
-                        setTimeout(() => {
-                            const width = entry.target.getAttribute('style').match(/width: (\d+)%/)[1];
-                            entry.target.style.width = width + '%';
-                        }, 100);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            progressBars.forEach(bar => {
-                observer.observe(bar);
-            });
-        });
-    </script>
-
-    <section class="portfolio" id="portfolio">
-        <h2 class="heading">My <span>Projects</span></h2>
-
-        <div class="portfolio-container">
-
-            <div class="portfolio-box">
-                <img src="images\1.avif" alt="Recipe Website">
-                <div class="portfolio-layer">
-                    <h4>Recipe Website (Django)</h4>
-                    <p>A user-friendly recipe sharing platform with authentication, CRUD operations, and responsive UI.
-                    </p>
-                    <a target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="images\2.avif" alt="School Management System">
-                <div class="portfolio-layer">
-                    <h4>School Management System</h4>
-                    <p>Role-based system built with Angular, CodeIgniter 3 & MySQL for managing schools, teachers, and
-                        students.</p>
-                    <a target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="images\3.avif" alt="Invoice Management System">
-                <div class="portfolio-layer">
-                    <h4>Invoice Management System</h4>
-                    <p>Web app built with PHP, Angular & MySQL for invoice creation, tracking, and PDF export.</p>
-                    <a target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="images\4.avif" alt="Portfolio Website">
-                <div class="portfolio-layer">
-                    <h4>Personal Portfolio</h4>
-                    <p>Responsive personal portfolio showcasing skills, projects, and professional journey.</p>
-                    <a target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="images\5.avif" alt="Student Management System">
-                <div class="portfolio-layer">
-                    <h4>Student Management System</h4>
-                    <p>CRUD-based Django project to manage student records, teachers, and classes with login
-                        authentication.</p>
-                    <a target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="images\8.avif" alt="Inventory Management System">
-                <div class="portfolio-layer">
-                    <h4>Inventory Management System</h4>
-                    <p>Web app developed in CodeIgniter 3 and MySQL for tracking stock, orders, and product movement.
-                    </p>
-                    <a target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me!</span></h2>
-
-        <form action="#">
-            <div class="input-box">
-                <input type="text" value="Jagrup Meghwal" placeholder="Jagrup Meghwal">
-                <input type="email" value="jagrup@dil.in" placeholder="jagrup@dil.in">
-            </div>
-
-            <div class="input-box">
-                <input type="number" value="7850984303" placeholder="7850984303">
-                <input type="text" value="Mandal Jodha" placeholder="Mandal Jodha">
-            </div>
-
-            <textarea name="" id="" cols="30" rows="3" placeholder="Yes Iam Different"></textarea>
-
-            <input type="submit" value="Send Message" class="btn">
-        </form>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-container">
-
-            <div class="footer-about">
-                <h3>Jagrup Talniya</h3>
-                <p>Full-Stack Web Developer passionate about building responsive, secure, and modern web applications.
-                </p>
-            </div>
-
-            <div class="footer-social">
-                <h4>Follow Me</h4>
-                <a href="https://x.com/Imjagruptalniya" target="_blank"><i class="fab fa-x-twitter"></i></a>
-                <a href="https://www.facebook.com/jagrup.meghwal" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/imjagruptalniya/" target="_blank"><i
-                        class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/jagrup-talniya-9a9374334" target="_blank"><i
-                        class="fab fa-linkedin"></i></a>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2025 Jagrup Talniya. All Rights Reserved.</p>
-            <a href="#home" class="scroll-top"><i class="fa-solid fa-arrow-up"></i></a>
-        </div>
-    </footer>
-
-
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
-    <script>
-
-        let menuIcon = document.querySelector('#menu-icon');
-        let menu = document.querySelector('.navbar');
-
-        menuIcon.onclick = () => {
-            menuIcon.classList.toggle('fa-xmark');
-            menu.classList.toggle('active');
-        };
-
-        let sections = document.querySelectorAll('section');
-        let navLinks = document.querySelectorAll('header nav a');
-
-        window.onscroll = () => {
-            sections.forEach(sec => {
-                let top = window.scrollY;
-                let offset = sec.offsetTop - 150;
-                let height = sec.offsetHeight;
-                let id = sec.getAttribute('id');
-
-                if (top >= offset && top < offset + height) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-                    });
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.length > 1) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
-
-            let header = document.querySelector('header');
-
-            header.classList.toggle('sticky', window.scrollY > 100);
-
-            menuIcon.classList.remove('fa-xmark');
-            menu.classList.remove('active');
-        };
-
-        ScrollReveal({
-            distance: '80px',
-            duration: 2000,
-            delay: 200,
-        });
-
-        ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-        ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
-        ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
-        ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
-
-        const typed = new Typed('.multiple-text', {
-            strings: ['Backend Developer', 'Full Stack Developer', 'Software Developer'],
-            typeSpeed: 70,
-            backSpeed: 70,
-            backDelay: 1000,
-            loop: true
         });
     </script>
 </body>
